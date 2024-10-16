@@ -4,10 +4,9 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 
-const distname = '/build'
 const app: Express = express()
 app.use(cors())
-app.use('./source', express.static(__dirname + distname))
+app.use('/source', express.static(path.dirname(__filename)))
 
 app.get('/', (req: Request, res: Response) => {
     res.status(200)
