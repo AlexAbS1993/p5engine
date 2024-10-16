@@ -1,10 +1,13 @@
-import path from 'path'
+const path = require('path') 
 
-export default {
-    entry: './index.ts',
+module.exports = {
+    entry: {
+        // index: './index.ts',
+        main: './src/main.ts'
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'index.js',
+        filename: '[name].js',
     },
     module: {
         rules: [
@@ -18,6 +21,6 @@ export default {
     devtool: 'inline-source-map',
     mode: "development",
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
+        extensions: ['.tsx', '.ts', '.js']
+    }
 };
